@@ -55,13 +55,38 @@ int zbirCifaraBroja(int broj) {
 	return zbirCifara;
 }
 
+// 04 funkcija za obrnuti broj
+// 1234 ---> 4321
+int obrnutiBroj(int broj) {
+	int rezultat = 0;
+
+	while (broj > 0) {
+		// 125568 % 10 = 8
+		// 125568 / 10 = 12556
+		// 8*10 + 6 = 86
+		// 86 * 10 + 5 = 865
+		// 865 * 10 + 5 = 8655
+		// zbir cifara povecaj za posljednu cifru
+		// posljednja cifra je broj % 10 (8)
+		int posljednja_cifra = broj % 10;
+
+		// ostatak tog broja (12556)
+		broj /= 10; // 125568 ---> 12556
+		rezultat = 10 * rezultat + posljednja_cifra;
+	}
+
+	return rezultat;
+}
+
 
 int main() {
 	cout << "maksimum unesenih brojeva " << maksimum4Broja(-10, 0, 3, 9) << endl;
 
-    cout << "vrijednost stepena je " << stepenBroja(3, -2) << endl;
+	cout << "vrijednost stepena je " << stepenBroja(3, -2) << endl;
 
 	cout << "zbir cifara je " << zbirCifaraBroja(20) << endl;
+
+	cout << "obrnuti broj je " << obrnutiBroj(129345) << endl;
 
 	return 0;
 }
