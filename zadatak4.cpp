@@ -52,9 +52,9 @@ int binarnoUDecimalno(int broj) {
 		// ljepsi ispis na konzolu
 
 		if (broj != 0)
-			cout << "<~======= novi ciklus =======~>" << endl;
+			cout << "<~~=======~ novi ciklus ~=======~~>" << endl;
 		else
-			cout << "<~-~-~-~ kraj programa ~-~-~-~>" << endl;
+			cout << "<~-~-~-~-~ kraj programa ~-~-~-~-~>" << endl;
 
 	}
 
@@ -64,7 +64,20 @@ int binarnoUDecimalno(int broj) {
 int main() {
 
 	// pozivanje funkcija vrsimo u glavnoj funkciji
-	cout << "broj decimalno je: " << binarnoUDecimalno(10) << endl;
+	cout << "broj decimalno je: " << binarnoUDecimalno(1010) << endl;
+
+	cout << endl; // prazna linija
+
+	// N A P O M E N A:
+	// zapis binarnog broja u C++ jeziku i njegov ispis na konzolu
+	int binarno4 = 0b100; // binarni zapis broja 4
+	cout << "ispis broja 0b0100 na konzolu: " << binarno4 << endl; // 4
+
+	int binarno5 = 0b101; // binarni zapis broja 5
+	cout << "ispis broja 0b0101 na konzolu: " << binarno5 << endl; // 5
+
+	int binarno10 = 0b1010; // binarni zapis broja 10
+	cout << "ispis broja 0b1010 na konzolu: " << binarno10 << endl; // 10
 
 	return 0;
 }
