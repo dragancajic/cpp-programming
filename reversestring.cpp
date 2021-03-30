@@ -4,7 +4,7 @@
 #include <math.h>
 #include <string>
 
-//using std::cin;
+using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
@@ -13,6 +13,7 @@ using std::string;
 /**
  * @author: Драган Ћајић
  * @datetime: 11:58 PM March 19, 2021
+ * @modified: 5:24 PM March 30, 2021
  * @subject: Програмирање на језику C++
  */
 /* Za dati string (nisku znakova), napisati funkciju koja vraca novi string
@@ -24,7 +25,7 @@ string obrniString(string niska) {
 
 	// test 0
 	cout << niska << endl;
-
+	/*
 	// pokusajmo da "izvrtimo"/prodjemo kroz sve znakove niske
 	unsigned int i = 0;
 	// niska.length() -> unsigned int
@@ -33,14 +34,24 @@ string obrniString(string niska) {
 		cout << obrnutaNiska << endl;
 		i++;
 	}
+	*/
+	// newer 'for in' loop syntax
+	for (char znak : niska) {
+		obrnutaNiska = znak + obrnutaNiska;
+	}
 
 	return obrnutaNiska;
 }
 
 int main() {
+	string niskaZnakova = "";
+
+	cout << "Unesite string/nisku znakova: ";
+	cin >> niskaZnakova;
 
 	// pozivanje funkcija vrsimo u glavnoj funkciji
-	cout << "obrnuta niska je: " << obrniString("dragan") << endl;
+	//cout << "obrnuta niska je: " << obrniString("dragan") << endl;
+	cout << "obrnuta niska je: " << obrniString(niskaZnakova) << endl;
 
 	return 0;
 }
